@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CoffeeImg, Container, Control, Description, Order, Price, Tags, Title } from "./styles";
 import { Check, ShoppingCart } from "phosphor-react";
+import QuantityInput from "../Form/QuantityInput";
 
 type Props = {
   coffee: {
@@ -16,15 +17,15 @@ const Card = ({ coffee }: Props) => {
   const [quantity, setQuantity] = useState(1);
   const [isItemAdded, setIsItemAdded] = useState(false);
 
-  // const incrementQuantity = () => {
-  //   setQuantity((prev) => prev + 1);
-  // }
+  const incrementQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  }
 
-  // const decrementQuantity = () => {
-  //   if (quantity > 1) {
-  //     setQuantity((prev) => prev - 1);
-  //   }
-  // }
+  const decrementQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  }
 
   const handleAddItem = () => {
     setIsItemAdded(true);
@@ -45,23 +46,26 @@ const Card = ({ coffee }: Props) => {
       <Control>
         <Price>
           <span>R$</span>
-          <Price>{coffee.price.toFixed(2)}</Price>
+          <span>{coffee.price.toFixed(2)}</span>
         </Price>
 
         <Order>
-          {/* <QuantityInput>
-            
-          </QuantityInput> */}
+          <QuantityInput
+            quantity={quantity}
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
+          >
+          </QuantityInput>
 
           <button disabled={isItemAdded} onClick={handleAddItem}>
             {isItemAdded ? (
               <Check
                 weight="fill"
                 size={22}
-                color='black'
+                color="white"
               />
             ) : (
-              <ShoppingCart size={22} color='black' />
+              <ShoppingCart size={22} color="white" />
             )}
           </button>
         </Order>

@@ -52,13 +52,46 @@ export const Description = styled.span`
 `
 
 export const Control = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   
+  margin-top: 32px;
 `
 
 export const Price = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
 
+  span:first-child {
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors['base-text']};
+  }
+
+  span:last-child {
+    font-family: 'Baloo 2', sans-serif;
+    color: ${({ theme }) => theme.colors['base-text']};
+    font-size: 1.8rem;
+  }
 `
 
-export const Order = styled.div`
+export const Order = styled.div<{ $itemAdded?: boolean }>`
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
+  > button {
+    background-color: ${({ theme, $itemAdded }) =>
+      $itemAdded ? theme.colors['yellow-dark'] : theme.colors['purple-dark']};
+    transition: background-color 0.2s;
+    border-radius: 6px;
+    padding: 8px;
+    display: flex;
+
+    &:hover {
+      background-color: ${({ theme, $itemAdded }) =>
+        $itemAdded ? theme.colors.yellow : theme.colors.purple};
+    }
+  }
 `
