@@ -1,6 +1,9 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { CoffeeList, Heading, Hero, HeroContent, Info } from "./styles";
 
+import { coffees } from '../../../data.json';
+import Card from "../../components/Card";
+
 const Home = () => {
   return (
     <div>
@@ -66,11 +69,11 @@ const Home = () => {
       <CoffeeList>
         <h2>Nossos cafés</h2>
 
-        {/* <div>
+        <div>
           {coffees.map((coffee) => (
             <Card key={coffee.id} coffee={coffee} />
           ))}
-        </div> */}
+        </div>
       </CoffeeList>
     </div>
   );
