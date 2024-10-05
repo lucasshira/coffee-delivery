@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Aside, Container } from "./styles";
 import { MapPin, ShoppingCart } from "phosphor-react";
+import { useQuantity } from "../../contexts/QuantityContext";
 
 const Header = () => {
+  const { totalQuantity } = useQuantity();
+
   return (
     <Container>
       <Link to="/">
@@ -17,7 +20,7 @@ const Header = () => {
 
         <Link to={`cart`}>
           <ShoppingCart size={22} weight="fill" />
-          <span>2</span>
+          <span>{totalQuantity}</span>
         </Link>
       </Aside>
     </Container>
