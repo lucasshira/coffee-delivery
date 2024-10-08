@@ -21,5 +21,5 @@ const QuantityInput = ({ quantity, decrementQuantity, incrementQuantity }: Props
     </Container>
   );
 }
- 
+
 export default QuantityInput;

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Aside, Container } from "./styles";
 import { MapPin, ShoppingCart } from "phosphor-react";
-import { useQuantity } from "../../contexts/QuantityContext";
+import { useCart } from "../../hooks/useCart";
 
 const Header = () => {
-  const { totalQuantity } = useQuantity();
+  const { cart } = useCart();
 
   return (
     <Container>
@@ -20,7 +20,7 @@ const Header = () => {
 
         <Link to={`cart`}>
           <ShoppingCart size={22} weight="fill" />
-          <span>{totalQuantity}</span>
+          {cart.length > 0 ? <span>{cart.length}</span> : null}
         </Link>
       </Aside>
     </Container>

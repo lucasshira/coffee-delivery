@@ -28,14 +28,14 @@ export const Heading = styled.header`
 
   > h1 {
     font-family: 'Baloo 2';
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 3rem;
+    line-height: 1.3;
     color: ${({ theme }) => theme.colors['base-title']};
   }
 
   > span {
-    font-size: 1.4rem;
-    line-height: 1.2;
+    font-size: 1.25rem;
+    line-height: 1.3;
     color: ${({ theme }) => theme.colors['base-subtitle']};
   }
 `

@@ -4,6 +4,9 @@ import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home/index.tsx'
 import React from 'react'
+import { Cart } from './pages/Cart/index.tsx'
+import { Success } from './pages/Success/index.tsx'
+
 
 const router = createBrowserRouter([
   {
@@ -13,6 +16,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
+      },
+      {
+        path: '/order/:orderId/success',
+        element: <Success />,
       },
     ],
   },

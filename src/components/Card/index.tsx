@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CoffeeImg, Container, Control, Description, Order, Price, Tags, Title } from "./styles";
 import { Check, ShoppingCart } from "phosphor-react";
 import QuantityInput from "../Form/QuantityInput";
-import { useQuantity } from "../../contexts/QuantityContext";
+import { useCart } from "../../hooks/useCart";
 
 type Props = {
   coffee: {
@@ -19,7 +19,7 @@ const Card = ({ coffee }: Props) => {
   const [quantity, setQuantity] = useState(1);
   const [isItemAdded, setIsItemAdded] = useState(false);
 
-  const { setTotalQuantity } = useQuantity();
+  const { addItem } = useCart();
 
   const incrementQuantity = () => {
     setQuantity((prev) => prev + 1);
@@ -32,8 +32,9 @@ const Card = ({ coffee }: Props) => {
   }
 
   const handleAddItem = () => {
+    addItem({ id: coffee.id, quantity })
     setIsItemAdded(true);
-    setTotalQuantity((prev) => prev + quantity);
+    setQuantity(1);
   }
 
   return (
