@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <Container>
       <Link to="/">
-        <img src="../../../public/logo.svg" alt="Coffee Delivery Logo" />
+        <img src="/logo.svg" alt="Coffee Delivery Logo" />
       </Link>
 
       <Aside>
