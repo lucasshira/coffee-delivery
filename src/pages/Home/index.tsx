@@ -62,7 +62,7 @@ const Home = () => {
             </Info>
           </div>
 
-            <img src="public/images/hero.svg" alt="Café do Coffee Delivery" />
+            <img src="/images/hero.svg" alt="Café do Coffee Delivery" />
         </HeroContent>
       </Hero>
 
