@@ -45,7 +45,7 @@ const Home = () => {
                   weight="fill"
                   size={32}
                   color="white"
-                  style={{ backgroundColor: "yellow" }}
+                  style={{ backgroundColor: "orange" }}
                 />
                 <span>Entrega rápida e rastreada</span>
               </div>

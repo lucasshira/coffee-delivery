@@ -8,6 +8,7 @@ export const Container = styled.main`
   align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
+  margin-bottom: 32px;
 
   img {
     margin-bottom: -13px;

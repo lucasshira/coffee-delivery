@@ -14,6 +14,7 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 54px;
 
   h2 {
     ${mixins.fonts.titleXS};
